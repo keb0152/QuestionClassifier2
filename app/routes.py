@@ -6,6 +6,8 @@ from getSynonyms import sentenceVars, toString
 from itertools import product
 import nltk
 
+app = Flask(__name__)
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -58,3 +60,5 @@ def GetSynonyms():
     #         form.inputquestion.data))
     #     return redirect('/index')
     # return render_template('GetSynonyms.html', title='GetSynonyms', form=form)
+if __name__ == "__main__":
+    applicaiton.run(host='0.0.0.0')
