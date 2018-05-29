@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Classify your question</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.inputquestion.label }}<br>
+            {{ form.inputquestion(size=64) }}
+            {% for error in form.inputquestion.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    {% if classification %}
+        <h3>Best Guess:</h3>
+        <div>{{classification}}</div>
+        <h3>Similarity (out of 1.0):</h3>
+        <div>{{similarity}}</div>
+        <h3>Final Classification:</h3>
+        <div>{{final}}</div>
+        {% if others %}
+            <h3>Other possible questions:</h3>
+            {% for q in others %}
+                <div>{{q}}</div>
+            {% endfor %}
+        {% else %}
+            <h3>Other possible questions:</h3>
+            <div>No other suggestions</div>
+        {% endif %}
+    {% endif %}
+{% endblock %}
