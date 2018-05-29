@@ -1,4 +1,5 @@
 from flask import render_template, flash, redirect, request
+import flask
 from app import app
 from forms import ClassifyForm, SynonymForm
 from Predict import predictKNN
