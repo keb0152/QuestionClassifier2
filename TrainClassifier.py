@@ -6,7 +6,7 @@ from sklearn.externals import joblib
 print("reading data...")
 inFile = open('Data/variants','r')
 print("loading word2vec...")
-w2v = gensim.models.KeyedVectors.load_word2vec_format('Models\W2VBrown10_100')
+w2v = gensim.models.KeyedVectors.load_word2vec_format('Models/W2VBrown10_100')
 
 print("vectorizing...")
 x = []
@@ -24,4 +24,4 @@ print("training...")
 newmodel = KNN(n_neighbors=5)
 newmodel.fit(x,y)
 
-joblib.dump(newmodel, 'Models\KNNClassifier')
+joblib.dump(newmodel, 'Models/KNNClassifier')
