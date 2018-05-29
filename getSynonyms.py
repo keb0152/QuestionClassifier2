@@ -79,4 +79,4 @@ def makeVariantsFile(infile, outfile):
         fileout.write('\n')
     return
 
-makeVariantsFile('Data/Questions', 'Data/Variants')
+# makeVariantsFile('Data/Questions', 'Data/Variants')
