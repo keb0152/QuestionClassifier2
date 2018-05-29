@@ -4,13 +4,13 @@ import gensim
 from sklearn.externals import joblib
 from scipy.spatial.distance import cosine
 
-w2v = gensim.models.KeyedVectors.load_word2vec_format('Models\W2VBrown10_100')
+w2v = gensim.models.KeyedVectors.load_word2vec_format('Models/W2VBrown10_100')
 
 def predictKNN(inText):
     tokens = nltk.word_tokenize(inText)
     vector = np.mean([w2v.wv[w] for w in tokens if w in w2v]
                      or [np.zeros(100)], axis=0)
-    model = joblib.load('Models\KNNClassifier')
+    model = joblib.load('Models/KNNClassifier')
     prediction = int(model.predict([vector]).tolist()[0])
     probs = model.predict_proba([vector])[0].tolist()
 
