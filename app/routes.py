@@ -6,7 +6,7 @@ from getSynonyms import sentenceVars, toString
 from itertools import product
 import nltk
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 @app.route('/')
 @app.route('/index')
