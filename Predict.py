@@ -37,6 +37,6 @@ def predictKNN(inText):
 
     return prediction, probs, q_out, similarity, final, classes, others#, a_out
 
-intext = 'who likes the color pink?'
-prediction, probs, q_out, s, final, classes, others = predictKNN(intext)
-print(others)
+# intext = 'who likes the color pink?'
+# prediction, probs, q_out, s, final, classes, others = predictKNN(intext)
+# print(others)
