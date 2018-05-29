@@ -1,5 +1,4 @@
-from flask import render_template, flash, redirect, request
-import flask
+from flask import render_template, flash, redirect, request, Flask
 from app import app
 from forms import ClassifyForm, SynonymForm
 from Predict import predictKNN
@@ -7,7 +6,7 @@ from getSynonyms import sentenceVars, toString
 from itertools import product
 import nltk
 
-app = flask(__name__)
+app = Flask(__name__)
 
 @app.route('/')
 @app.route('/index')
